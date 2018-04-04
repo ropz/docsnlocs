@@ -1,5 +1,146 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        Hello World!
-    </body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Story points</title>
+	<link rel="stylesheet" href="">
+	<!-- <script src="vue.js"></script> -->
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+	<link type="text/css" rel="stylesheet" href="storyhelper.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>	
+</head>
+<body>
+	<div id="app" style="margin-top: 75px;">
+		<b-container>
+			<h1 style="background-color: #00A3DB; color: white;">Story point estimator</h1>
+			<b-row>
+				<b-col>
+					<h3>Topic type</h3>
+				</b-col>
+				<b-col>
+					<h3>Content complexity</h3>
+				</b-col>
+				<b-col>
+					<h3>Risk</h3>
+				</b-col>
+				<b-col>
+					<h3>Formatting complexity</h3>
+				</b-col>
+				<b-col>
+					<h3>Graphics</h3>
+				</b-col>
+				<b-col>
+					<h3>Review</h3>
+				</b-col>
+			</b-row>
+			<b-row>
+				<b-col>
+					<div>
+						<b-form>
+							<b-form-group>
+								<b-form-radio-group v-model="selectedTopicType"
+															:options="optionsTopicType"
+															stacked
+															name="radioTopicType">
+								</b-form-radio-group>
+							</b-form-group>
+						</b-form>
+					</div>
+					<br/>
+					<span>Multiplier: {{ selectedTopicType }}</span>
+				</b-col>
+				<b-col>
+					<div>
+						<b-form>
+							<b-form-group>
+								<b-form-radio-group v-model="selectedContentComplexity"
+							   								:options="optionsContentComplexity"
+															stacked
+															name="radioContentComplexity">
+								</b-form-radio-group>
+							</b-form-group>
+						</b-form>
+					</div>
+					<br/>
+					<br/>
+					<span>Multiplier: {{ selectedContentComplexity }}</span>
+				</b-col>
+				<b-col>
+					<div>
+						<b-form>
+							<b-form-group>
+								<b-form-radio-group v-model="selectedRisk"
+														    :options="optionsRisk"
+															stacked
+															name="radioRisk">
+								</b-form-radio-group>
+							</b-form-group>
+						</b-form>
+					</div>
+					<br/>
+					<br/>
+					<span>Multiplier: {{ selectedRisk }}</span>
+				</b-col>
+				<b-col>
+					<div>
+						<b-form>
+							<b-form-group>
+								<b-form-radio-group v-model="selectedFormattingComplexity"
+															:options="optionsFormattingComplexity"
+															stacked
+															name="radioFormattingComplexity">
+								</b-form-radio-group>
+							</b-form-group>
+						</b-form>
+					</div>
+					<br/>
+					<br/>
+					<span>Multiplier: {{ selectedFormattingComplexity }}</span>
+				</b-col>
+				<b-col>
+					<div>
+						<b-form>
+							<b-form-group>
+								<b-form-radio-group v-model="selectedGraphics"
+															:options="optionsGraphics"
+															stacked
+															name="radioGraphics"
+															>
+								</b-form-radio-group>
+							</b-form-group>
+						</b-form>
+					</div>
+					<br/>
+					<br/>
+					<span>Multiplier: {{ selectedGraphics }}</span>
+				</b-col>
+				<b-col>
+					<div>
+						<b-form>
+							<b-form-group>
+								<b-form-radio-group v-model="selectedReview"
+															:options="optionsReview"
+															stacked
+															name="radioReview">
+								</b-form-radio-group>
+							</b-form-group>
+						</b-form>
+					</div>
+					<br/>
+					<br/>
+					<span>Multiplier: {{ selectedReview }}</span>
+				</b-col>
+			</b-row>
+			<br/>
+			<h3>Raw score: {{ pointsTotal }} </h3>
+			<br/>
+			<h1 style="background-color: #00A3DB; color: white;">Fibonacci estimate: {{ nextFib }}</h1>
+		</b-container>
+	</div>
+	<script src="storyhelper.js"></script>
+</body>
 </html>
