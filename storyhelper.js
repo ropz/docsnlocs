@@ -4,10 +4,9 @@ let vinst = new Vue({
 			fibs: [1,2,3,5,8,13,21],					// Fibonacci numbers. No danger of going above 21.
 			selectedTopicType: 0.5,
 			optionsTopicType: [
-				{text: 'Updated (revised)', value: 0.5},
-				{text: 'New (revised)', value: 0.75},
-				{text: 'Updated (added)', value: 1.0},
-				{text: 'New (added)', value: 1.25}
+				{text: 'Minor updates', value: 0.5},
+				{text: 'Update topic', value: 0.75},
+				{text: 'New content', value: 1.0},
 			],
 			selectedContentComplexity: 1,
 			optionsContentComplexity: [
